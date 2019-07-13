@@ -3,7 +3,6 @@ import { Modal, View, TouchableWithoutFeedback, StyleSheet } from 'react-native'
 
 import PropTypes from 'prop-types';
 import Image from 'react-native-image-progress';
-import ProgressBar from 'react-native-progress/Bar';
 
 const styles = StyleSheet.create({
   overlay: {
@@ -28,7 +27,7 @@ export default class ImagePreview extends Component {
       visible={visible}>
       <View style={[styles.overlay, overlayStyle]}>
         <TouchableWithoutFeedback onPress={close}>
-          <Image indicator={indicator || ProgressBar} indicatorProps={this.props.indicatorProps} resizeMode={'contain'} source={source} style={[styles.image, imageStyle]} />
+          <Image resizeMode={'contain'} source={source} style={[styles.image, imageStyle]} />
         </TouchableWithoutFeedback>
       </View>
     </Modal>);
